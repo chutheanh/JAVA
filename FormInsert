@@ -1,0 +1,67 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags/form"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+    <center>
+        <h1>Insert Dev</h1>
+        <h2 style="color: red">${status}</h2>
+        <spring:form action="insert.htm" modelAttribute="p">
+            <table>
+                <tr>
+                    <td>DevName</td>
+                    <td>
+                        <spring:input path="devName"/>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>Compony</td>
+                    <td>
+                        <spring:input path="compony"/>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>Language</td>
+                    <td>
+                        <spring:input path="language"/>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>Position</td>
+                    <td>
+                        <spring:input path="position"/>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>StartWorkingDate</td>
+                    <td>
+                        <spring:input type="date" path="startWorkingDate"/>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>Status</td>
+                    <td>
+                        <spring:input path="status"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="INSERT"/>
+                        <input type="reset" value="CLEAR"/>
+                        
+                    </td>
+                </tr>
+            </table>
+        </spring:form>
+    </center>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+@Override
+    public List<TblDev> getAll() {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            session.beginTransaction();
+            List list = session.createQuery("from TblDev").list();
+            session.getTransaction().commit();
+            session.close();
+            return list;
+       } catch (Exception e) {
+           e.printStackTrace();
+           session.getTransaction().rollback();
+           session.close();
+        }
+        return null;
+
+    }
